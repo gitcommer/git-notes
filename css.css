@@ -1,0 +1,106 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #262626;
+    font-family: sans-serif;
+}
+
+.container{ /*wrapper*/
+    width: 1280px;
+    margin: 70px auto 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.container .box{ /*8 box*/
+    position: relative; /*------*/
+    width: 300px;
+    height: 300px;
+    background: #ff0;
+    margin: 10px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+/*same rani sa banner*/
+.container .box .imgBox{ /*box sa image*/
+    position: relative; /*wla gi position ra niya relative*/
+    overflow: hidden; /*i hide niya ang sobra sa image*/
+}
+
+
+
+.tae{
+    position: absolute; /*sa img box ni siya ni sapaw*/
+    z-index: 1;
+    top: 123px;
+    background: blue;
+    padding: 0px 96px;
+}
+
+
+
+
+
+/*------------------------*/
+.container .box .imgBox img{
+    max-width: 100%;
+    /*transition: transform 2s;*/ /*2 sec modaka ang image*/
+}
+
+.container .box:hover .imgBox img{
+    /*transform: scale(1.5);*/  /*size sa image inig dako*/
+}
+/*------------------------*/
+
+
+
+/*------------------------
+- mao ni box sa details na transparent og mo animate
+*/
+.container .box .details{ /*si details ra iyang gi igo diri*/
+    position: absolute; /*para mosulod ni na div sa container*/
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgb(0,0,0,.8); /*transparent*/
+    transform: scaleY(0); /*flip transparent*/
+    transition: transform .5s;
+}
+
+.container .box:hover .details{ /*inig hover niya sa box i run sd niya si details*/
+    transform: scaleY(1); /*para mo filp ang transparent*/
+}
+/*------------------------*/
+
+
+
+/*------------------------*/
+.container .box .details .content{ /*style ni h2 og p*/
+    position: absolute; /*para masulod sa container*/
+    top: 140px; /*para ma center top ang content*/
+    transform: translateY(-50%); /*para ma center bottom ang content*/
+    text-align: center;
+    padding: 15px;
+    color: #fff;
+}
+
+.container .box .details .content h2{
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    color: #ff0; 
+}
+
+.container .box .details .content p{
+    margin: 10px 0 0;
+    padding: 0;
+}
+
+.container .box .details .content a{
+    margin: 10px 0 0;
+    padding: 0;
+}
+/*------------------------*/
